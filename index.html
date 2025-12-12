@@ -7,28 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<!-- Put this where you want the PayPal button to appear -->
-<div id="paypal-button-container-P-4NK940210D525323GNE5YOHQ"></div>
-
-<script src="https://www.paypal.com/sdk/js?client-id=Ae2pA4iJ3HxrcBkgXkArUhsOmGN--31AD_NAcumNjfa3nQED5ugwcjTuboBckhcbfRpBLicOgdMr7PvI&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-<script>
-  paypal.Buttons({
-    style: {
-      shape: 'rect',
-      color: 'gold',
-      layout: 'vertical',
-      label: 'subscribe'
-    },
-    createSubscription: function (data, actions) {
-      return actions.subscription.create({
-        plan_id: 'P-4NK940210D525323GNE5YOHQ'
-      });
-    },
-    onApprove: function (data, actions) {
-      alert('Subscription active: ' + data.subscriptionID);
-    }
-  }).render('#paypal-button-container-P-4NK940210D525323GNE5YOHQ');
-</script>
 <body>
   <div class="container">
     <header>
@@ -133,5 +111,27 @@
   </div>
 
   <script src="script.js"></script>
-</body>
+</body><!-- Put this where you want the PayPal button to appear -->
+<div id="paypal-button-container-P-4NK940210D525323GNE5YOHQ"></div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=Ae2pA4iJ3HxrcBkgXkArUhsOmGN--31AD_NAcumNjfa3nQED5ugwcjTuboBckhcbfRpBLicOgdMr7PvI&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+    style: {
+      shape: 'rect',
+      color: 'gold',
+      layout: 'vertical',
+      label: 'subscribe'
+    },
+    createSubscription: function (data, actions) {
+      return actions.subscription.create({
+        plan_id: 'P-4NK940210D525323GNE5YOHQ'
+      });
+    },
+    onApprove: function (data, actions) {
+      alert('Subscription active: ' + data.subscriptionID);
+    }
+  }).render('#paypal-button-container-P-4NK940210D525323GNE5YOHQ');
+</script>
+
 </html>

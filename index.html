@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>AI Marketing Prompt Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Marketing Prompt Generator</h1>
+      <p>Generate high-converting prompts for social media content.</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="generator">Generator</button>
+      <button class="tab-btn" data-tab="favorites">Favorites</button>
+      <button class="tab-btn" data-tab="analytics">Analytics</button>
+    </div>
+
+    <!-- Generator -->
+    <div id="generator" class="tab-content active">
+      <div class="config-grid">
+        <div class="config-group">
+          <label>Niche</label>
+          <select id="niche">
+            <option value="real-estate">Real Estate</option>
+            <option value="ecom">E‑Commerce</option>
+            <option value="fitness">Fitness</option>
+          </select>
+        </div>
+        <div class="config-group">
+          <label>Goal</label>
+          <select id="goal">
+            <option value="leads">Leads</option>
+            <option value="sales">Sales</option>
+            <option value="engagement">Engagement</option>
+          </select>
+        </div>
+        <div class="config-group">
+          <label>Platform</label>
+          <select id="platform">
+            <option value="facebook">Facebook</option>
+            <option value="instagram">Instagram</option>
+            <option value="linkedin">LinkedIn</option>
+          </select>
+        </div>
+        <div class="config-group">
+          <label>Tone</label>
+          <select id="tone">
+            <option value="professional">Professional</option>
+            <option value="fun">Fun</option>
+            <option value="urgent">Urgent</option>
+          </select>
+        </div>
+        <div class="config-group">
+          <label>Format</label>
+          <select id="format">
+            <option value="vsl">Video Sales Letter</option>
+            <option value="carousel">Carousel Post</option>
+            <option value="stories">Stories/Reels</option>
+          </select>
+        </div>
+        <button id="generate" class="generate-btn">Generate 5 Prompts</button>
+      </div>
+
+      <div id="prompts-container" class="prompts-container"></div>
+      <div id="freemium-notice" class="freemium-notice" style="display:none;">
+        <p><strong>Free limit reached (3 generations/day).</strong> Upgrade later to unlock unlimited prompts.</p>
+      </div>
+    </div>
+
+    <!-- Favorites -->
+    <div id="favorites" class="tab-content">
+      <div class="favorites-header">
+        <h3>Saved Favorites (<span id="favorites-count">0</span>)</h3>
+        <div>
+          <button id="export-csv" class="btn-secondary">Export CSV</button>
+          <button id="export-json" class="btn-secondary">Export JSON</button>
+        </div>
+      </div>
+      <div id="favorites-list" class="favorites-list"></div>
+    </div>
+
+    <!-- Analytics -->
+    <div id="analytics" class="tab-content">
+      <h3>Prompt Performance Trends</h3>
+      <div class="analytics-grid">
+        <div class="stat-card">
+          <div class="stat-number">6.8%</div>
+          <div>Avg Engagement Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3.2%</div>
+          <div>Conversion Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2.1%</div>
+          <div>Avg CTR</div>
+        </div>
+      </div>
+      <div class="top-niches">
+        <h4>Top Niches</h4>
+        <div class="niche-bar fitness">Fitness <span>6.8%</span></div>
+        <div class="niche-bar ecom">E‑Commerce <span>5.2%</span></div>
+        <div class="niche-bar real-estate">Real Estate <span>4.9%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
